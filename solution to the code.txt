@@ -1,0 +1,49 @@
+// C++ code for generating infinite number pattern//
+#include <iostream>
+
+using namespace std;
+
+//Assigning value to the variable// 
+int main() {
+
+//write the values of x and y according to given number//
+  int x = 2, y = 3;                
+  int u = x, l = 0, k = 0, j = x;
+           
+//let the infinite pattern be till 100//
+  while(k < 100) {
+    cout<<x<<",";
+    if(u == x && l > 0) {
+      u = y;
+      l = 0;
+    }                                  
+
+    if(u == y && l == j) {
+      if(j == x) {
+	j = y;
+      } else {
+	j = x;
+      }
+
+      u = x;
+      l = 0;
+    }
+
+// Outer loop to handle number of rows u in this case//
+    for(int i=0; i<u; i++) {
+
+// Printing numbers//
+      cout<<y<<",";
+    }
+
+// here we are incresing number for every iteration//
+    l++;
+    k++;
+
+// Ending line after each row//
+    cout<<endl;
+  }
+   
+   return 0;
+}
+
